@@ -31,4 +31,5 @@ export interface Quest extends QuestData {
   id: string;
   created_at: string;
   updated_at: string;
+  participants_count?: number;
 } 
