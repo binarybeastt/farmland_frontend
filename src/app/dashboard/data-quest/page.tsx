@@ -51,7 +51,7 @@ export default function DataQuestPage() {
     setIsFetchingMore(true);
     setPagination(prev => ({
       ...prev,
-      skip: prev.skip + prev.limit
+      skip: (prev.skip ?? 0) + (prev.limit ?? 9)
     }));
   }, []);
 
