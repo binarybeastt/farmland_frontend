@@ -1,0 +1,603 @@
+.dashboardContainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.mainContentWrapper {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  margin-left: 282px; /* Same width as the sidebar */
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.backButton {
+  border: none;
+  background: none;
+  color: #336633;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  padding: 8px 0;
+}
+
+.backButton:hover {
+  text-decoration: underline;
+}
+
+.pageTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.energyPoints,
+.questPoints {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.energyIcon {
+  font-size: 1.2rem;
+}
+
+.coinIcon {
+  font-size: 1.2rem;
+}
+
+.notifications {
+  position: relative;
+}
+
+.notificationIcon {
+  font-size: 1.2rem;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  background-color: #336633;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.contentContainer {
+  padding: 16px 0;
+}
+
+.loadingState,
+.errorState,
+.noQuestMessage {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1rem;
+  color: #666;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.errorState {
+  color: #d32f2f;
+}
+
+.questDetailCard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.questImageContainer {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.questImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.questContent {
+  padding: 24px;
+}
+
+.questHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.questTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.questPoints {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.pointsValue {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.questDescription {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.questMeta {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metaLabel {
+  font-size: 0.85rem;
+  color: #777;
+  font-weight: 500;
+}
+
+.metaValue {
+  font-weight: 600;
+  color: #333;
+}
+
+.statusBadge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.active {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.inactive {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.requirementsSection {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.requirementsTitle {
+  font-size: 1.2rem;
+  margin: 0 0 16px 0;
+  color: #333;
+}
+
+.requirementsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.requirementItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.requirementIcon {
+  font-size: 1.2rem;
+}
+
+.registrationSection {
+  margin-top: 24px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.registerButton {
+  background-color: #336633;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  transition: background-color 0.2s;
+}
+
+.registerButton:hover {
+  background-color: #2a542a;
+}
+
+.registerButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.assignError {
+  color: #d32f2f;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.inactiveMessage {
+  color: #d32f2f;
+  margin-top: 12px;
+  text-align: center;
+  font-style: italic;
+}
+
+.assignedQuestInfo {
+  margin-top: 24px;
+  background-color: #e8f5e9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.successMessage {
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.progressInfo {
+  margin-bottom: 16px;
+}
+
+.progressBar {
+  height: 12px;
+  background-color: #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #336633;
+  border-radius: 6px;
+}
+
+.progressText {
+  font-size: 0.9rem;
+  color: #555;
+  display: block;
+  text-align: right;
+}
+
+.questStatus {
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.enterRecordButton {
+  margin-top: 0;
+  background-color: #336633;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  flex: 1;
+  transition: background-color 0.2s;
+}
+
+.enterRecordButton:hover {
+  background-color: #264d26;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+.modalHeader h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #777;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background-color: #f0f0f0;
+}
+
+.modalContent {
+  padding: 24px;
+}
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.modalDescription {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.harvestForm,
+.recordForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-weight: 500;
+  color: #555;
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  background-color: #fff;
+  appearance: none;
+}
+
+.formSelect {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.formInput:focus,
+.formSelect:focus {
+  outline: none;
+  border-color: #336633;
+  box-shadow: 0 0 0 2px rgba(51, 102, 51, 0.2);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.sectionTitle {
+  font-weight: 700;
+  color: #555;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.formRow {
+  display: flex;
+  gap: 16px;
+}
+
+.formRow .formGroup {
+  flex: 1;
+}
+
+.continueButton {
+  background-color: #336633;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.continueButton:hover {
+  background-color: #264d26;
+}
+
+.formError {
+  color: #e53935;
+  background-color: #ffebee;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.continueButton:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .modal {
+    width: 95%;
+    max-height: 80vh;
+  }
+  
+  .formRow {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .questDetailCard {
+    flex-direction: row;
+    max-height: none;
+  }
+
+  .questImageContainer {
+    width: 40%;
+    height: auto;
+  }
+
+  .questContent {
+    width: 60%;
+  }
+}
+
+.blurBackground {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
+.loadingText {
+  padding: 10px;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+.noDataText {
+  padding: 10px;
+  color: #d32f2f;
+  font-size: 0.9rem;
+  border: 1px solid #ffcdd2;
+  border-radius: 4px;
+  background-color: #ffebee;
+  margin-top: 5px;
+} 

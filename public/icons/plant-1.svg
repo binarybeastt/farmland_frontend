@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Plant Icon</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="plant-icon" fill="#4CAF50" fill-rule="nonzero">
+            <path d="M12,2 C6.48,2 2,6.48 2,12 C2,17.52 6.48,22 12,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 12,2 Z" id="path-bg" fill-opacity="0.3"></path>
+            <path d="M12,4 C12,4 12,8 16,8 C16,8 16,4 12,4 Z" id="leaf-1"></path>
+            <path d="M12,4 C12,4 12,8 8,8 C8,8 8,4 12,4 Z" id="leaf-2"></path>
+            <path d="M12,9 L12,20" id="stem" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M9,15 C9,15 9,19 12,19 C15,19 15,15 15,15" id="root" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"></path>
+        </g>
+    </g>
+</svg> 

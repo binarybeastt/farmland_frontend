@@ -1,0 +1,50 @@
+.errorContainer {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.errorTitle {
+  color: #e53935;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.errorMessage {
+  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.retryButton, .refreshButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.retryButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.retryButton:hover {
+  background-color: #43a047;
+}
+
+.refreshButton {
+  background-color: #2196f3;
+  color: white;
+}
+
+.refreshButton:hover {
+  background-color: #1e88e5;
+} 

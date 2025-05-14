@@ -1,0 +1,21 @@
+:root {
+  /* Global color tokens */
+  --global-tokens-COLORS-neutral-100-duplicate: #ffffff;
+  --global-tokens-COLORS-neutral-200-duplicate: #e5e5e5;
+  --global-tokens-COLORS-neutral-300-duplicate: #b3b3b3;
+  --global-tokens-COLORS-neutral-700-duplicate: #333333;
+  --global-tokens-COLORS-neutral-800-duplicate: #1a1a1a;
+  --global-tokens-colors-teal-600-duplicate: #2e6650;
+  --gray-2: #4f4f4f;
+  --gray-5: #e0e0e0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Sora', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+} 

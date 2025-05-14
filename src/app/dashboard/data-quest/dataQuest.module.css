@@ -1,0 +1,453 @@
+.dashboardContainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.mainContentWrapper {
+  flex: 1;
+  overflow-y: auto;
+  margin-left: 282px; /* Same width as the sidebar */
+  width: calc(100% - 282px);
+  background-color: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.mainContentWrapper :global(.main-content) {
+  background-color: #ffffff;
+  min-height: 956px;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #f0f0f0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.energyPoints, .questPoints {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.energyIcon {
+  font-size: 20px;
+}
+
+.coinIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #FFD700;
+  color: #fff;
+  font-size: 14px;
+}
+
+.notifications {
+  position: relative;
+}
+
+.notificationIcon {
+  font-size: 20px;
+  color: #777;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff4d4f;
+  color: white;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  color: #333;
+}
+
+.contentContainer {
+  display: flex;
+  width: 100%;
+  padding: 32px 48px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.headerActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.mainHeading {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.createQuestButton {
+  display: inline-flex;
+  align-items: center;
+  background-color: #1E6738;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.createQuestButton:hover {
+  background-color: #17562D;
+}
+
+.questGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.questCard {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: white;
+}
+
+.questCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.questImageContainer {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.questImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.questCard:hover .questImage {
+  transform: scale(1.05);
+}
+
+.questContent {
+  padding: 16px;
+}
+
+.questTitleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.questTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.questPoints {
+  background-color: #f3f9f0;
+  color: #4CAF50;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.questDescription {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.questFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.joinQuestButton {
+  background-color: #1E6738;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.joinQuestButton:hover {
+  background-color: #17562D;
+}
+
+.questParticipants {
+  font-size: 12px;
+  color: #666;
+}
+
+.loadingState, .errorState, .noQuestsMessage {
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
+  color: #666;
+  width: 100%;
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.loadMoreButton {
+  background-color: #1E6738;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.loadMoreButton:hover {
+  background-color: #17562D;
+}
+
+.loadMoreButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Add styles for the quest card link */
+.questCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.questCardLink:hover {
+  transform: translateY(-5px);
+}
+
+.questCardLink:hover .questCard {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.questCardLink:hover .viewDetailsLink {
+  text-decoration: underline;
+}
+
+.viewDetailsLink {
+  margin-top: 12px;
+  color: #336633;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cachedNotice {
+  background-color: #f9f9f9;
+  border-left: 4px solid #ffcc00;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.cachedNotice:before {
+  content: "⚡";
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .questGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contentContainer {
+    padding: 24px 32px;
+  }
+  
+  .mainHeading {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .contentContainer {
+    padding: 20px 24px;
+  }
+}
+
+/* When sidebar is collapsed */
+@media (max-width: 768px) {
+  .mainContentWrapper {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
+  
+  .contentContainer {
+    padding: 16px 20px;
+  }
+  
+  .mainHeading {
+    font-size: 22px;
+  }
+  
+  .header {
+    padding: 16px 20px;
+  }
+  
+  .pageTitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .questGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mainContentWrapper {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+  }
+  
+  .contentContainer {
+    padding: 16px 12px;
+  }
+  
+  .mainHeading {
+    font-size: 20px;
+  }
+  
+  .headerActions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .createQuestButton {
+    align-self: stretch;
+    justify-content: center;
+  }
+  
+  .questImageContainer {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContentWrapper {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .contentContainer {
+    padding: 16px;
+    margin: 0 auto;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .questGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .loadingState, .errorState, .noQuestsMessage {
+    padding: 16px;
+  }
+  
+  /* Ensure header is properly styled */
+  .header {
+    padding: 12px 16px;
+  }
+  
+  /* Make quest cards more mobile-friendly */
+  .questCard {
+    margin-bottom: 16px;
+  }
+  
+  .questImageContainer {
+    height: 140px;
+  }
+} 

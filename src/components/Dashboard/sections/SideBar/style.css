@@ -1,0 +1,19 @@
+.side-bar-instance {
+  left: 0 !important;
+  position: fixed !important;
+  top: 0 !important;
+  height: 1024px !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.icon-instance-node {
+  height: 20px !important;
+  position: relative !important;
+  width: 20px !important;
+  color: white !important;
+  stroke: white !important;
+}
+
+.design-component-instance-node {
+  font-family: "Sora", Helvetica !important;
+} 

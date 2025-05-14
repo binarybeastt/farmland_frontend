@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
 @theme inline {
@@ -23,4 +26,123 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Override for sidebar text size */
+.side-buttons .text-wrapper {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+/* Fix for quest details layout */
+.dashboard .mainContentWrapper {
+  margin-left: 282px !important;
+  width: calc(100% - 282px) !important;
+}
+
+/* Dashboard subpages shared styles */
+.dashboard-subpage {
+  display: flex;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.dashboard-subpage main {
+  margin-left: 282px;
+  padding: 0;
+  width: calc(100% - 282px);
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.dashboard-subpage .content-container {
+  padding: 24px 40px;
+  width: 100%;
+}
+
+/* Responsive styles for when sidebar is collapsed */
+body:has(.side-bar-wrapper.collapsed) .dashboard-subpage main {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+/* Media queries for dashboard subpages */
+@media (max-width: 768px) {
+  .dashboard-subpage main {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
+  
+  .dashboard-subpage .content-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-subpage main {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+  }
+  
+  .dashboard-subpage .content-container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Completely remove sidebar from layout flow */
+  .side-bar-wrapper.collapsed {
+    display: none !important;
+  }
+  
+  /* Ensure main content has zero left margin */
+  .dashboard-subpage main, 
+  .dashboard .main-content-wrapper {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    padding-left: 0 !important;
+    box-sizing: border-box;
+  }
+  
+  /* Center content with proper padding on both sides */
+  .dashboard-subpage .content-container,
+  .dashboard .content-wrapper {
+    padding: 16px !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  
+  /* When sidebar is shown, make it overlay properly */
+  .side-bar-wrapper:not(.collapsed) {
+    position: fixed !important;
+    z-index: 2000 !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Create overlay backdrop when sidebar is open */
+  body:has(.side-bar-wrapper:not(.collapsed))::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+  }
+  
+  /* Force content to be full width with zero margin */
+  body[style] {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
 }

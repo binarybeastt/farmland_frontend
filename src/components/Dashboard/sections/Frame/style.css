@@ -1,0 +1,204 @@
+.frame {
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #f8f8f8;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 14px 48px;
+  position: fixed;
+  top: 0;
+  width: 1158px;
+  margin-left: 282px;
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+.frame .text-wrapper {
+  color: #000000;
+  font-family: "Sora", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+  z-index: 51;
+}
+
+.frame .div-2 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 24px;
+  position: relative;
+}
+
+.frame .div-3 {
+  align-items: center;
+  border-color: #f2f2f2;
+  border-right-style: solid;
+  border-right-width: 1px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 12px;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.frame .div-4 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  position: relative;
+}
+
+.frame .interaction-fill {
+  height: 24px !important;
+  position: relative !important;
+  width: 24px !important;
+}
+
+.frame .points-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame .points-circle {
+  width: 24px;
+  height: 24px;
+}
+
+.frame .text-wrapper-2 {
+  color: #333333;
+  font-family: "Sora", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.frame .overlap-group {
+  display: none;
+}
+
+.frame .vector {
+  display: none;
+}
+
+.frame .img {
+  display: none;
+}
+
+.frame .plant {
+  display: none;
+}
+
+.frame .div-5 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 16px;
+  position: relative;
+}
+
+.frame .overlap-wrapper {
+  background-color: #f8f8f8;
+  border-radius: 40px;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  width: 40px;
+}
+
+.frame .overlap {
+  height: 28px;
+  left: 8px;
+  position: relative;
+  top: 4px;
+  width: 28px;
+}
+
+.frame .vuesax-linear {
+  background-image: url(https://c.animaapp.com/0CJtXeA1/img/notification@2x.png);
+  background-size: 100% 100%;
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 4px;
+  width: 24px;
+}
+
+.frame .overlap-group-wrapper {
+  background-color: #910d0d;
+  border-radius: 16px;
+  height: 16px;
+  left: 12px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 16px;
+}
+
+.frame .overlap-group-2 {
+  height: 35px;
+  left: 5px;
+  position: relative;
+  top: 2px;
+  width: 14px;
+}
+
+.frame .text-wrapper-3 {
+  color: #ffffff;
+  font-family: "Sora", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  left: 3px;
+  letter-spacing: 0;
+  line-height: 28.8px;
+  position: absolute;
+  top: 6px;
+  white-space: nowrap;
+}
+
+.frame .text-wrapper-4 {
+  color: #ffffff;
+  font-family: "Sora", Helvetica;
+  font-size: 8px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: 9.6px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.frame .div-wrapper-2 {
+  background-color: #dbd7fc;
+  border-radius: 40px;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  width: 40px;
+}
+
+.frame .text-wrapper-5 {
+  color: #000000;
+  font-family: "Sora", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  left: 10px;
+  letter-spacing: 0;
+  line-height: 23.2px;
+  position: absolute;
+  top: 7px;
+  white-space: nowrap;
+} 

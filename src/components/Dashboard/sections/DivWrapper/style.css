@@ -1,0 +1,379 @@
+.div-wrapper {
+  align-items: flex-start;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  width: 100%;
+  max-width: 711px;
+  height: 579px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.div-wrapper .tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.div-wrapper .tab {
+  padding: 8px 16px;
+  border-radius: 50px;
+  background-color: #f2f2f2;
+  color: #555;
+  font-family: "Sora", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.div-wrapper .tab.active {
+  background-color: #e8f5f0;
+  color: #2e6650;
+}
+
+.div-wrapper .prediction-card {
+  border-radius: 12px;
+  border: 1px solid #f2f2f2;
+  padding: 24px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #fff5f5;
+  border-left: 5px solid #ff0000;
+  width: 673px;
+  height: 230px;
+  box-sizing: border-box;
+}
+
+.div-wrapper .prediction-card.low-risk {
+  background-color: #f0fff0;
+  border-left: 5px solid #008000;
+}
+
+.div-wrapper .crop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.div-wrapper .crop-name {
+  font-family: "Sora", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.div-wrapper .updated {
+  font-family: "Sora", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  color: #888;
+}
+
+.div-wrapper .risk-level {
+  font-family: "Sora", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  margin: 8px 0;
+}
+
+.div-wrapper .factor {
+  font-family: "Sora", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  margin: 8px 0;
+}
+
+.div-wrapper .recommendation {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 8px;
+  width: 565px;
+  height: 64px;
+  box-sizing: border-box;
+}
+
+.div-wrapper .recommendation-header {
+  font-family: "Sora", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.div-wrapper .recommendation-text {
+  font-family: "Sora", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.div-wrapper .frame-17 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 12px;
+  position: relative;
+}
+
+.div-wrapper .frame-18 {
+  align-items: center;
+  background-color: #e8f5f0;
+  border-radius: 40px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  justify-content: center;
+  padding: 8px;
+  position: relative;
+}
+
+.div-wrapper .text-wrapper-14 {
+  color: #2e6650;
+  font-family: "Sora", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 17.4px;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.div-wrapper .frame-19 {
+  align-items: center;
+  border: 1px solid;
+  border-color: var(--gray-6);
+  border-radius: 56px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  justify-content: center;
+  padding: 8px;
+  position: relative;
+}
+
+.div-wrapper .text-wrapper-15 {
+  color: var(--gray-3);
+  font-family: "Sora", Helvetica;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 17.4px;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.div-wrapper .frame-20 {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #fef4f4;
+  border-color: #ff0000;
+  border-left-style: solid;
+  border-left-width: 5px;
+  border-radius: 6px;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 24px;
+  overflow: hidden;
+  padding: 25px 22px;
+  position: relative;
+  width: 100%;
+}
+
+.div-wrapper .high-temperature {
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  width: 40px;
+}
+
+.div-wrapper .group-wrapper {
+  height: 42px;
+  left: 5px;
+  position: relative;
+  width: 33px;
+}
+
+.div-wrapper .group-4 {
+  height: 42px;
+}
+
+.div-wrapper .group-5 {
+  height: 42px;
+  width: 33px;
+}
+
+.div-wrapper .img-wrapper {
+  height: 42px;
+  position: relative;
+}
+
+.div-wrapper .group-6 {
+  height: 40px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 33px;
+}
+
+.div-wrapper .frame-21 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 24px;
+  position: relative;
+}
+
+.div-wrapper .text-wrapper-16 {
+  color: #554c4c;
+  font-family: "Sora", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.div-wrapper .text-wrapper-17 {
+  color: var(--gray-3);
+  font-family: "Sora", Helvetica;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 14px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.div-wrapper .frame-22 {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #fde5e5;
+  border-radius: 8px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  padding: 12px;
+  position: relative;
+  width: 100%;
+}
+
+.div-wrapper .text-wrapper-18 {
+  color: var(--gray-3);
+  font-family: "Sora", Helvetica;
+  font-size: 12px;
+  font-weight: 200;
+  letter-spacing: 0;
+  line-height: 12px;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.div-wrapper .text-wrapper-19 {
+  color: var(--gray-3);
+  font-family: "Sora", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.div-wrapper .text-wrapper-20 {
+  color: #000000;
+  font-family: "Sora", Helvetica;
+  font-size: 10px;
+  font-weight: 100;
+  left: 476px;
+  letter-spacing: 0;
+  line-height: 10px;
+  position: absolute;
+  top: -1px;
+  white-space: nowrap;
+}
+
+.div-wrapper .frame-23 {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #eafdea;
+  border-color: #008000;
+  border-left-style: solid;
+  border-left-width: 5px;
+  border-radius: 6px;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 24px;
+  overflow: hidden;
+  padding: 25px 22px;
+  position: relative;
+  width: 100%;
+}
+
+.div-wrapper .humidity {
+  height: 40px;
+  position: relative;
+  width: 40px;
+}
+
+.div-wrapper .color-copy {
+  height: 36px;
+  left: 7px;
+  position: absolute;
+  top: 2px;
+  width: 30px;
+}
+
+.div-wrapper .frame-24 {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #fefefe;
+  border-radius: 8px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  padding: 12px;
+  position: relative;
+  width: 100%;
+}
+
+.div-wrapper .text-wrapper-21 {
+  color: #000000;
+  font-family: "Sora", Helvetica;
+  font-size: 10px;
+  font-weight: 100;
+  left: 562px;
+  letter-spacing: 0;
+  line-height: 10px;
+  position: absolute;
+  top: 18px;
+  white-space: nowrap;
+} 

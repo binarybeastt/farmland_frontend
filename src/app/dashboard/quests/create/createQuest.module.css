@@ -1,0 +1,14 @@
+.mainContentWrapper {
+  flex: 1;
+  overflow-y: auto;
+  margin-left: 282px; /* Same width as the sidebar */
+  width: calc(100% - 282px);
+  background-color: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.contentWrapper {
+  padding: 20px;
+} 
