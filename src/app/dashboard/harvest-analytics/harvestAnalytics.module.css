@@ -1,5 +1,5 @@
 /* Define color variables */
-:root {
+:global(:root) {
   --primary-color: #2e6650;
   --secondary-color: #7b68ee;
   --success-color: #4caf50;
