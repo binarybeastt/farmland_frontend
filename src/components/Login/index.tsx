@@ -54,7 +54,7 @@ export const Login: React.FC = () => {
             <img
               className="plant"
               alt="Plant"
-              src="/img/plant.svg"
+              src="/img/Plant.svg"
             />
 
             <div className="text-wrapper">FarmLand</div>
