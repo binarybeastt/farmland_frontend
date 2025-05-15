@@ -254,6 +254,17 @@
   color: #444;
 }
 
+.predictionMessage {
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  background-color: #f0f7ff;
+  border-left: 3px solid #3498db;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  border-radius: 4px;
+}
+
 .closeCompletionButton {
   background-color: #4caf50;
   color: white;

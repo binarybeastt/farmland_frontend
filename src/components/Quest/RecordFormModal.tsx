@@ -86,11 +86,16 @@ const RecordFormModal: React.FC<RecordFormModalProps> = ({
     harvest_date: new Date().toISOString().split('T')[0],
     quantity_kg: 0,
     quality_rating: 5,
-    harvest_conditions: {},
-    location: {},
+    harvest_conditions: { notes: '' },
+    location: { description: '' },
     loss_reported_kg: 0,
     quest_id: questId
   });
+  
+  // Additional state for simple text inputs - initialize as empty strings
+  const [harvestConditionsText, setHarvestConditionsText] = useState('');
+  const [locationText, setLocationText] = useState('');
+  const [transportConditionsText, setTransportConditionsText] = useState('');
   
   const [storageFormData, setStorageFormData] = useState<StorageRecord>({
     facility_type: '',
@@ -105,7 +110,7 @@ const RecordFormModal: React.FC<RecordFormModalProps> = ({
   const [transportFormData, setTransportFormData] = useState<TransportRecord>({
     transport_type: '',
     duration_hours: 0,
-    conditions: {},
+    conditions: { notes: '' },
     distance_km: 0,
     observations: '',
     harvest_id: '',
@@ -156,6 +161,21 @@ const RecordFormModal: React.FC<RecordFormModalProps> = ({
     
     fetchQuestDetails();
   }, [questId, isOpen]);
+
+  // In the useEffect block, add this code to initialize text inputs from nested objects
+  useEffect(() => {
+    if (questDetails) {
+      // For harvest form, extract values from nested objects for the text inputs
+      if (questDetails.quest_type === 'harvest') {
+        setHarvestConditionsText(harvestFormData.harvest_conditions?.notes || '');
+        setLocationText(harvestFormData.location?.description || '');
+      }
+      // For transport form
+      else if (questDetails.quest_type === 'transport') {
+        setTransportConditionsText(transportFormData.conditions?.notes || '');
+      }
+    }
+  }, [questDetails]);
 
   // Handle input changes for Harvest form
   const handleHarvestInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -216,9 +236,9 @@ const RecordFormModal: React.FC<RecordFormModalProps> = ({
       setCompletionData({
         pointsEarned: questDetails.points_reward || 50,
         cropType: questDetails.quest_type === 'harvest' ? harvestFormData.crop_type : 'Tomato',
-        riskLevel: 'High (25% Loss Predicted)',
-        mainFactor: 'Temperature',
-        recommendation: questDetails.quest_type === 'transport' ? 'Transport during cooler hours' : ''
+        riskLevel: '',
+        mainFactor: '',
+        recommendation: ''
       });
       
       // Show completion modal
@@ -231,11 +251,14 @@ const RecordFormModal: React.FC<RecordFormModalProps> = ({
           harvest_date: new Date().toISOString().split('T')[0],
           quantity_kg: 0,
           quality_rating: 5,
-          harvest_conditions: {},
-          location: {},
+          harvest_conditions: { notes: '' },
+          location: { description: '' },
           loss_reported_kg: 0,
           quest_id: questId
         });
+        // Also reset the text fields
+        setHarvestConditionsText('');
+        setLocationText('');
       } else if (questDetails.quest_type === 'storage') {
         setStorageFormData({
           facility_type: '',
@@ -250,12 +273,14 @@ const RecordFormModal: React.FC<RecordFormModalProps> = ({
         setTransportFormData({
           transport_type: '',
           duration_hours: 0,
-          conditions: {},
+          conditions: { notes: '' },
           distance_km: 0,
           observations: '',
           harvest_id: '',
           quest_id: questId
         });
+        // Also reset the transport conditions text field
+        setTransportConditionsText('');
       }
     } catch (err) {
       console.error('Error submitting record:', err);
@@ -368,22 +393,15 @@ const RecordFormModal: React.FC<RecordFormModalProps> = ({
             <label htmlFor="harvest_conditions">Harvest Conditions</label>
             <textarea
               id="harvest_conditions"
-              name="harvest_conditions"
-              value={JSON.stringify(harvestFormData.harvest_conditions)}
+              name="harvest_conditions_text"
+              value={harvestConditionsText}
               onChange={(e) => {
-                try {
-                  const parsed = JSON.parse(e.target.value);
-                  setHarvestFormData(prev => ({
-                    ...prev,
-                    harvest_conditions: parsed
-                  }));
-                } catch (err) {
-                  // If not valid JSON, just store as string
-                  setHarvestFormData(prev => ({
-                    ...prev,
-                    harvest_conditions: { notes: e.target.value }
-                  }));
-                }
+                setHarvestConditionsText(e.target.value);
+                // Convert the text to a notes object in the background
+                setHarvestFormData(prev => ({
+                  ...prev,
+                  harvest_conditions: { notes: e.target.value }
+                }));
               }}
               placeholder="Describe harvest conditions"
               className={styles.formTextarea}
@@ -395,22 +413,15 @@ const RecordFormModal: React.FC<RecordFormModalProps> = ({
             <label htmlFor="location">Location</label>
             <textarea
               id="location"
-              name="location"
-              value={JSON.stringify(harvestFormData.location)}
+              name="location_text"
+              value={locationText}
               onChange={(e) => {
-                try {
-                  const parsed = JSON.parse(e.target.value);
-                  setHarvestFormData(prev => ({
-                    ...prev,
-                    location: parsed
-                  }));
-                } catch (err) {
-                  // If not valid JSON, just store as string
-                  setHarvestFormData(prev => ({
-                    ...prev,
-                    location: { description: e.target.value }
-                  }));
-                }
+                setLocationText(e.target.value);
+                // Convert the text to a description object in the background
+                setHarvestFormData(prev => ({
+                  ...prev,
+                  location: { description: e.target.value }
+                }));
               }}
               placeholder="Describe location details"
               className={styles.formTextarea}
@@ -630,23 +641,16 @@ const RecordFormModal: React.FC<RecordFormModalProps> = ({
           <div className={styles.formGroup}>
             <label htmlFor="conditions">Transport Conditions</label>
             <textarea
-              id="conditions"
-              name="conditions"
-              value={JSON.stringify(transportFormData.conditions)}
+              id="conditions_text"
+              name="conditions_text"
+              value={transportConditionsText}
               onChange={(e) => {
-                try {
-                  const parsed = JSON.parse(e.target.value);
-                  setTransportFormData(prev => ({
-                    ...prev,
-                    conditions: parsed
-                  }));
-                } catch (err) {
-                  // If not valid JSON, just store as string
-                  setTransportFormData(prev => ({
-                    ...prev,
-                    conditions: { notes: e.target.value }
-                  }));
-                }
+                setTransportConditionsText(e.target.value);
+                // Convert the text to a notes object in the background
+                setTransportFormData(prev => ({
+                  ...prev,
+                  conditions: { notes: e.target.value }
+                }));
               }}
               placeholder="Describe transport conditions"
               className={styles.formTextarea}

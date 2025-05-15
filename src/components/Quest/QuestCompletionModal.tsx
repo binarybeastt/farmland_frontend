@@ -57,14 +57,9 @@ const QuestCompletionModal: React.FC<QuestCompletionModalProps> = ({
               <div className={styles.detailsIcon}>🌱</div>
               <div className={styles.detailsContent}>
                 <h3>{cropType}</h3>
-                {riskLevel && <p>Risk Level: {riskLevel}</p>}
-                {mainFactor && <p>Main Factor: {mainFactor}</p>}
-                {recommendation && (
-                  <div className={styles.recommendation}>
-                    <p>Recommendation</p>
-                    <p>{recommendation}</p>
-                  </div>
-                )}
+                <p className={styles.predictionMessage}>
+                  Our FarmLand AI is processing your data through our prediction system, you can take a look at the loss predictions page shortly
+                </p>
               </div>
             </div>
           )}
