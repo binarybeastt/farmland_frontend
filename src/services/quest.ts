@@ -339,16 +339,4 @@ export const getAvailableHarvests = async (): Promise<Harvest[]> => {
     console.error('Error in getAvailableHarvests:', error);
     throw error;
   }
-};
-
-// Type for quest details
-export interface Quest {
-  id: string;
-  title: string;
-  description: string;
-  points_reward: number;
-  quest_type: 'harvest' | 'storage' | 'transport';
-  image?: string;
-  created_at?: string;
-  updated_at?: string;
-} 
+}; 
