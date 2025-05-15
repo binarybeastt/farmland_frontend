@@ -1,0 +1,272 @@
+.formContainer {
+  width: 100%;
+}
+
+.form {
+  width: 100%;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.formRow .formGroup {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.formGroup label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.formInput,
+.formTextarea,
+.formSelect {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formInput:focus,
+.formTextarea:focus,
+.formSelect:focus {
+  outline: none;
+  border-color: #336633;
+  box-shadow: 0 0 0 2px rgba(51, 102, 51, 0.2);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.formSelect {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.submitButton,
+.cancelButton {
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.submitButton {
+  background-color: #336633;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #264d26;
+}
+
+.submitButton:active {
+  transform: translateY(1px);
+}
+
+.cancelButton {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.cancelButton:hover {
+  background-color: #e0e0e0;
+}
+
+.submitButton:disabled,
+.cancelButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  background-color: #ffe3e3;
+  color: #e53935;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.loadingContainer {
+  padding: 24px;
+  text-align: center;
+  color: #666;
+}
+
+.loadingContainer p {
+  margin: 0;
+}
+
+.errorContainer {
+  padding: 24px;
+  text-align: center;
+}
+
+.errorContainer p {
+  color: #e53935;
+  margin-bottom: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .formRow {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .formActions {
+    flex-direction: column-reverse;
+  }
+  
+  .submitButton,
+  .cancelButton {
+    width: 100%;
+  }
+}
+
+/* Quest Completion Modal Styles */
+.completionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.checkmarkIcon {
+  margin-bottom: 1.5rem;
+}
+
+.completionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #4a4a4a;
+}
+
+.completionMessage {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.pointsContainer {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.pointsIcon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.pointsInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.pointsValue {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #f5a623;
+}
+
+.detailsCard {
+  display: flex;
+  width: 100%;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+  background-color: #fff9f9;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.detailsIcon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.detailsContent {
+  flex: 1;
+}
+
+.detailsContent h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.detailsContent p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.recommendation {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.recommendation p:first-child {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #444;
+}
+
+.closeCompletionButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.closeCompletionButton:hover {
+  background-color: #45a049;
+} 

@@ -1,0 +1,388 @@
+/* Leaderboard container */
+.leaderboardContainer {
+  padding: 32px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* League header section */
+.leagueHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.badgesRow {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.badgeButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.badgeButton:hover {
+  transform: scale(1.1);
+}
+
+.badgeWrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.activeBadge::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #336633;
+  border-radius: 50%;
+}
+
+.badge {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.badgeSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.leagueTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.leagueSubtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.countdownContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f9f9f9;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.countdownIcon {
+  font-size: 18px;
+}
+
+.countdownText {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+}
+
+/* Time period filter */
+.timeFilterContainer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.timeFilterButton {
+  background-color: transparent;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timeFilterButton:hover {
+  background-color: #f0f0f0;
+}
+
+.activeTimeFilter {
+  background-color: #336633;
+  color: white;
+}
+
+.activeTimeFilter:hover {
+  background-color: #264d26;
+}
+
+/* Leaderboard table */
+.leaderboardTable {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.headerLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.leaderboardRow {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.leaderboardRow:last-child {
+  border-bottom: none;
+}
+
+.leaderboardRow:hover {
+  background-color: #f9f9f9;
+}
+
+.highlightedRow {
+  background-color: #f5faf5;
+  border-left: 4px solid #336633;
+  padding-left: 20px;
+}
+
+.rankColumn {
+  flex: 0 0 48px;
+}
+
+.rankNumber {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.userColumn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #666;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.userFullName {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0 0 0;
+}
+
+.pointsColumn {
+  flex: 0 0 100px;
+  text-align: right;
+}
+
+.pointsValue {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Badge colors */
+.diamond {
+  color: #4E89FD;
+}
+
+.platinum {
+  color: #D8E3FC;
+}
+
+.gold {
+  color: #FFD966;
+}
+
+.silver {
+  color: #D9D9D9;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .leaderboardContainer {
+    padding: 24px 16px;
+  }
+  
+  .leagueTitle {
+    font-size: 28px;
+  }
+  
+  .badgesRow {
+    gap: 16px;
+  }
+  
+  .badgeWrapper {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .timeFilterContainer {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .timeFilterButton {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .leagueTitle {
+    font-size: 24px;
+  }
+  
+  .leagueSubtitle {
+    font-size: 14px;
+  }
+  
+  .leaderboardRow {
+    padding: 12px 16px;
+  }
+  
+  .tableHeader {
+    padding: 10px 16px;
+  }
+  
+  .headerLabel {
+    font-size: 12px;
+  }
+  
+  .rankColumn {
+    flex: 0 0 30px;
+  }
+  
+  .rankNumber {
+    font-size: 16px;
+  }
+  
+  .userAvatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .userColumn {
+    gap: 12px;
+  }
+  
+  .userName {
+    font-size: 14px;
+  }
+  
+  .userFullName {
+    font-size: 12px;
+  }
+  
+  .pointsValue {
+    font-size: 16px;
+  }
+  
+  .badgesRow {
+    gap: 12px;
+  }
+  
+  .badgeWrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .highlightedRow {
+    padding-left: 14px;
+    border-left-width: 2px;
+  }
+  
+  .timeFilterContainer {
+    margin-bottom: 16px;
+  }
+  
+  .timeFilterButton {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leagueTitle {
+    font-size: 22px;
+  }
+  
+  .userFullName {
+    display: none;
+  }
+  
+  .pointsColumn {
+    flex: 0 0 70px;
+  }
+  
+  .timeFilterContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+} 

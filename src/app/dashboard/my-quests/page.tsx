@@ -10,6 +10,7 @@ import { getAssignedQuests } from '../../../services/quest';
 import { AssignedQuest } from '../../../services/quest';
 import { useAuth } from '../../../context/AuthContext';
 import { getRandomQuestImage, defaultQuestImage } from '../../../utils/questImages';
+import RecordFormModal from '../../../components/Quest/RecordFormModal';
 import styles from './myQuests.module.css';
 
 export default function MyQuestsPage() {
@@ -19,6 +20,10 @@ export default function MyQuestsPage() {
   const [error, setError] = useState<string | null>(null);
   const [isFromCache, setIsFromCache] = useState(false);
   const { user } = useAuth();
+  
+  // States for the record form modal
+  const [showRecordModal, setShowRecordModal] = useState(false);
+  const [selectedQuest, setSelectedQuest] = useState<{id: string, title?: string} | null>(null);
   
   const fetchAssignedQuests = useCallback(async () => {
     try {
@@ -47,9 +52,10 @@ export default function MyQuestsPage() {
     fetchAssignedQuests();
   }, [fetchAssignedQuests]);
 
-  const handleEnterRecord = (e: React.MouseEvent, questId: string) => {
+  const handleEnterRecord = (e: React.MouseEvent, questId: string, questTitle?: string) => {
     e.preventDefault(); // Prevent the Link from navigating
-    router.push(`/dashboard/data-quest/${questId}?showModal=true`);
+    setSelectedQuest({id: questId, title: questTitle});
+    setShowRecordModal(true);
   };
 
   return (
@@ -113,7 +119,7 @@ export default function MyQuestsPage() {
                           <div className={styles.actionButtons}>
                             <button 
                               className={styles.enterRecordButton}
-                              onClick={(e) => handleEnterRecord(e, assignedQuest.quest_id)}
+                              onClick={(e) => handleEnterRecord(e, assignedQuest.quest_id, assignedQuest.quest?.title)}
                             >
                               Enter Record
                             </button>
@@ -137,6 +143,19 @@ export default function MyQuestsPage() {
           </div>
         </main>
       </div>
+
+      {/* Record Form Modal */}
+      {selectedQuest && (
+        <RecordFormModal
+          isOpen={showRecordModal}
+          onClose={() => {
+            setShowRecordModal(false);
+            setSelectedQuest(null);
+          }}
+          questId={selectedQuest.id}
+          questTitle={selectedQuest.title}
+        />
+      )}
     </ProtectedRoute>
   );
 } 

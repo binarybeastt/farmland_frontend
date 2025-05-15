@@ -92,6 +92,32 @@
   color: #112521;
 }
 
+/* Fixed position logout button */
+.fixedLogoutButton {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.fixedLogoutButton:hover {
+  background-color: #ff3333;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .header {
@@ -135,5 +161,9 @@
     width: 14px;
     height: 14px;
     font-size: 8px;
+  }
+  
+  .fixedLogoutButton {
+    display: flex;
   }
 } 
