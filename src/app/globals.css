@@ -6,6 +6,17 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  
+  /* Harvest analytics colors */
+  --primary-color: #2e6650;
+  --secondary-color: #7b68ee;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --danger-color: #f44336;
+  --light-gray: #f5f5f5;
+  --border-color: #e0e0e0;
+  --text-primary: #333;
+  --text-secondary: #666;
 }
 
 @theme inline {
