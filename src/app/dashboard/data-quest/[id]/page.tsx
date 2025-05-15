@@ -227,7 +227,8 @@ export default function QuestDetailsPage() {
           quality_rating: parseInt(harvestFormData.quality_rating) || 0,
           harvest_conditions: harvestFormData.harvest_conditions,
           location: harvestFormData.location,
-          loss_reported_kg: parseFloat(harvestFormData.loss_reported_kg) || 0
+          loss_reported_kg: parseFloat(harvestFormData.loss_reported_kg) || 0,
+          quest_id: quest.id
         };
         
         await submitHarvestRecord(harvestRecord);
@@ -247,7 +248,8 @@ export default function QuestDetailsPage() {
           humidity: parseFloat(storageFormData.humidity) || 0,
           duration_days: parseInt(storageFormData.duration_days),
           observations: storageFormData.observations,
-          harvest_id: storageFormData.harvest_id
+          harvest_id: storageFormData.harvest_id,
+          quest_id: quest.id
         };
         
         await submitStorageRecord(storageRecord);
@@ -267,7 +269,8 @@ export default function QuestDetailsPage() {
           distance_km: parseFloat(transportFormData.distance_km) || 0,
           observations: transportFormData.observations,
           conditions: transportFormData.conditions,
-          harvest_id: transportFormData.harvest_id
+          harvest_id: transportFormData.harvest_id,
+          quest_id: quest.id
         };
         
         await submitTransportRecord(transportRecord);
