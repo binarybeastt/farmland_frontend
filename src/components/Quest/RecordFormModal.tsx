@@ -12,9 +12,9 @@ import {
   HarvestRecord,
   StorageRecord,
   TransportRecord,
-  Harvest,
-  Quest
+  Harvest
 } from '../../services/quest';
+import { Quest } from '../../types/quest';
 
 // Types for the different form data structures
 interface HarvestFormData {
