@@ -13,7 +13,6 @@ import {
   StorageRecord,
   TransportRecord,
   Harvest
-} from '../../services/quest';
 
 import { Quest } from '../../types/quest';
 
